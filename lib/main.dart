@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_caster/home/discover/discover.dart';
 import 'package:flutter_caster/theme/caster_theme_data.dart';
 
 void main() {
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-
+              Placeholder(),
+              DiscoverPage()
             ],
           ),
         ),
