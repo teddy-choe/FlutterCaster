@@ -2,6 +2,11 @@
 
 Clone App copied from JetCaster
 
+# tech
+
+BLoC for state management,
+Drift for Local Database(based on SQLite)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
