@@ -7,14 +7,16 @@ class DiscoverPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 200,
-          child: PodcastCategoryTabs(),
-        ),
-        PodcastCategory()
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(
+            height: 200,
+            child: PodcastCategoryTabs(),
+          ),
+          PodcastCategory()
+        ],
+      ),
     );
   }
 }
@@ -45,11 +47,24 @@ class _PodcastCategoryTabsState extends State<PodcastCategoryTabs>
       itemCount: 5,
       itemBuilder: (context, index) {
         return ChoiceChip(
-          label: Text("test"),
-          selected: _indexSelected.value == 0,
+          // color: MaterialStateColor.resolveWith((states) => Theme.of(context).colorScheme.error),
+          selectedColor:
+              Theme.of(context).colorScheme.primary.withOpacity(0.08),
+          backgroundColor:
+              Theme.of(context).colorScheme.onSurface.withOpacity(0.12),
+          label: Text(
+            'Test',
+            style: TextStyle(
+              fontSize: Theme.of(context).textTheme.bodySmall?.fontSize,
+              color: _indexSelected.value == index
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.onSurface,
+            ),
+          ),
+          selected: _indexSelected.value == index,
           onSelected: (value) {
             setState(() {
-              _indexSelected.value = value ? 0 : -1;
+              _indexSelected.value = index;
             });
           },
         );
