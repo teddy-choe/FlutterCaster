@@ -65,5 +65,8 @@ class FlutterCasterTheme {
     bodyMedium: GoogleFonts.montserrat(fontWeight: _regular, fontSize: 16.0),
     titleLarge: GoogleFonts.montserrat(fontWeight: _bold, fontSize: 16.0),
     labelLarge: GoogleFonts.montserrat(fontWeight: _semiBold, fontSize: 14.0),
+  ).apply(
+    bodyColor: const Color(0xFFFAFBFB),
+    displayColor: const Color(0xFFFAFBFB)
   );
 }

@@ -7,16 +7,15 @@ class DiscoverPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(
-            height: 200,
-            child: PodcastCategoryTabs(),
-          ),
-          PodcastCategory()
-        ],
-      ),
+    return Column(
+      children: [
+        SizedBox(
+          height: 200,
+          child: PodcastCategoryTabs(),
+        ),
+        CategoryPodcasts(),
+        EpisodeList()
+      ],
     );
   }
 }
@@ -47,7 +46,6 @@ class _PodcastCategoryTabsState extends State<PodcastCategoryTabs>
       itemCount: 5,
       itemBuilder: (context, index) {
         return ChoiceChip(
-          // color: MaterialStateColor.resolveWith((states) => Theme.of(context).colorScheme.error),
           selectedColor:
               Theme.of(context).colorScheme.primary.withOpacity(0.08),
           backgroundColor:
